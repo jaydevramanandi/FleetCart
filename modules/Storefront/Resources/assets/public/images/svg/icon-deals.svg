@@ -1,0 +1,11 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="30" cy="30" rx="25" ry="25" fill="#FF4C4C"/>
+  <ellipse cx="30" cy="30" rx="20" ry="20" fill="#FFFFFF"/>
+  <text x="30" y="20" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#FF4C4C">50%</text>
+  <text x="30" y="32" text-anchor="middle" font-family="Arial" font-size="6" font-weight="bold" fill="#1B263B">OFF</text>
+  <path d="M15 40L45 20" stroke="#FFCF5E" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="12" cy="42" r="3" fill="#FFCF5E"/>
+  <circle cx="48" cy="18" r="3" fill="#FFCF5E"/>
+  <path d="M20 15L25 10L30 15L25 20L20 15Z" fill="#FF4C4C"/>
+  <path d="M35 45L40 40L45 45L40 50L35 45Z" fill="#FF4C4C"/>
+</svg> 

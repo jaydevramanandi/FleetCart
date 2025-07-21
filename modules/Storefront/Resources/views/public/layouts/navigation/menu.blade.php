@@ -1,4 +1,4 @@
-<li class="{{ mega_menu_classes($menu, $type) }}">
+<li>
     <a
         href="{{ $menu->url() }}"
         class="nav-link menu-item"

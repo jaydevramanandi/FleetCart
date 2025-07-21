@@ -13,6 +13,8 @@ const VERSION = "4.7.0";
 export default defineConfig(async ({ command }) => {
     // Glob pattern for assets
     const assetPatterns = [
+        "modules/**/Resources/assets/**/*.{js,scss}",
+        "modules/**/Resources/assets/**/vendors/*.scss",
         "**/app.scss",
         "**/app.js",
         "**/main.scss",
@@ -34,6 +36,10 @@ export default defineConfig(async ({ command }) => {
                     "modules/Admin/Resources/assets/js/dashboard.js",
                     "modules/Order/Resources/assets/admin/sass/print.scss",
                     "modules/Storefront/Resources/assets/public/js/vendors/flatpickr.js",
+
+                    // New theme custom css/js
+                    "modules/Storefront/Resources/assets/public/sass/custom.scss",
+                    "modules/Storefront/Resources/assets/public/js/custom.js",
                     ...assets,
                 ],
                 refresh: true,
@@ -57,7 +63,7 @@ export default defineConfig(async ({ command }) => {
                             "node_modules/jstree/dist/jstree.min.js",
                             "modules/Admin/Resources/assets/images/*",
                             "modules/Admin/Resources/assets/vendors/js/bootstrap.min.js",
-                            "modules/Storefront/Resources/assets/public/images/*",
+                            "modules/Storefront/Resources/assets/public/images/*",                            
                         ],
                         dest: "public/build/assets",
                     },

@@ -20,10 +20,16 @@
     @PWA
 
     <link rel="shortcut icon" href="{{ $favicon }}" type="image/x-icon">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Source+Sans+Pro:wght@400&family=Wix+Madefor+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media="screen">
+    
     <link rel="preload" href="{{ font_url(setting('storefront_display_font', 'Poppins')) }}"
           onload="this.onload=null; this.rel='stylesheet'; this.removeAttribute('as')" as="style">
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     @include('storefront::public.partials.variables')
 
@@ -34,7 +40,9 @@
         'modules/Storefront/Resources/assets/public/sass/vendors/_toastify.scss',
         'modules/Storefront/Resources/assets/public/sass/app.scss',
         'modules/Storefront/Resources/assets/public/js/app.js',
-        'modules/Storefront/Resources/assets/public/js/main.js'
+        'modules/Storefront/Resources/assets/public/js/main.js',
+        'modules/Storefront/Resources/assets/public/sass/custom.scss', // Include custom css
+        'modules/Storefront/Resources/assets/public/js/custom.js', // Include custom js
     ])
 
     @stack('styles')
@@ -77,24 +85,44 @@
     class="page-template {{ is_rtl() ? 'rtl' : 'ltr' }}"
     data-theme-color="{{ $themeColor->toHexString() }}"
 >
+
 <div x-data="App" class="wrapper">
-    @include('storefront::public.layouts.top_nav')
-    @include('storefront::public.layouts.header')
-    @include('storefront::public.layouts.navigation')
-    @include('storefront::public.layouts.breadcrumb')
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        @include('storefront::public.layouts.top_bar')
+
+        <!-- Main Header -->
+        @include('storefront::public.layouts.header_main')
+
+        <!-- Navigation -->
+        @include('storefront::public.layouts.header_navigation')
+    </header>
+
+    <!-- Hero Section -->
+    @include('storefront::public.layouts.hero_section')
+
+    <!-- Categories Section -->
+    @include('storefront::public.layouts.categories')
+
+    <!-- New Arrivals Section -->
+    @include('storefront::public.layouts.new_arrivals')
+
+    <!-- Testimonials Section -->
+    @include('storefront::public.layouts.testimonials')
+
+    <!-- Newsletter Section -->
+    @include('storefront::public.layouts.newsletter')
+
+    <!-- Footer -->
+    @include('storefront::public.layouts.footer_main')
 
     @yield('content')
-
-    @include('storefront::public.home.sections.newsletter_subscription')
-    @include('storefront::public.layouts.footer')
-
-    <div
-        class="overlay"
-        :class="{ active: $store.layout.overlay }"
-        @click="hideOverlay"
-    >
+    
     </div>
 
+    {{--
     @include('storefront::public.layouts.sidebar_menu')
     @include('storefront::public.layouts.localization')
 
@@ -105,6 +133,7 @@
     @include('storefront::public.layouts.alert')
     @include('storefront::public.layouts.newsletter_popup')
     @include('storefront::public.layouts.cookie_bar')
+    --}}
     @include('storefront::public.layouts.scroll_to_top')
 </div>
 

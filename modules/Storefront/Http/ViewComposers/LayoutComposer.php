@@ -139,7 +139,7 @@ class LayoutComposer
 
     private function getCategories()
     {
-        return Category::searchable();
+         return Category::take(5)->get();
     }
 
 

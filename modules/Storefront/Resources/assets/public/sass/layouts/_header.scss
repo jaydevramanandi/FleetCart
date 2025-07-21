@@ -14,6 +14,14 @@
     padding: 22px 0;
 }
 
+.ltr .home-section-inner, .home-section-inner .home-slider-wrap {
+    width: 100% !important;
+}
+
+.ltr .home-section-inner {
+    margin-left: 0 !important;
+}
+
 @media screen and (max-width: 991px) {
     .header-wrap-inner {
         padding: 5px 0;
