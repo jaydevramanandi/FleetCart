@@ -1,0 +1,9 @@
+{
+    "name": "Testimonial",
+    "alias": "testimonial",
+    "description": "The FleetCart Testimonial Module.",
+    "priority": 100,
+    "providers": [
+        "Modules\\Testimonial\\Providers\\TestimonialServiceProvider"
+    ]
+}
