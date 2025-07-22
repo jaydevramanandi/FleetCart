@@ -100,40 +100,11 @@
         @include('storefront::public.layouts.header_navigation')
     </header>
 
-    <!-- Hero Section -->
-    @include('storefront::public.layouts.hero_section')
-
-    <!-- Categories Section -->
-    @include('storefront::public.layouts.categories')
-
-    <!-- New Arrivals Section -->
-    @include('storefront::public.layouts.new_arrivals')
-
-    <!-- Testimonials Section -->
-    @include('storefront::public.layouts.testimonials')
-
-    <!-- Newsletter Section -->
-    @include('storefront::public.layouts.newsletter')
+    @yield('content')
 
     <!-- Footer -->
     @include('storefront::public.layouts.footer_main')
-
-    @yield('content')
     
-    </div>
-
-    {{--
-    @include('storefront::public.layouts.sidebar_menu')
-    @include('storefront::public.layouts.localization')
-
-    @if (!request()->routeIs('checkout.create'))
-        @include('storefront::public.layouts.sidebar_cart')
-    @endif
-
-    @include('storefront::public.layouts.alert')
-    @include('storefront::public.layouts.newsletter_popup')
-    @include('storefront::public.layouts.cookie_bar')
-    --}}
     @include('storefront::public.layouts.scroll_to_top')
 </div>
 

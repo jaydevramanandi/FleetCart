@@ -11,8 +11,13 @@ export function trans(langKey, replace = {}) {
 }
 
 export function hasAccess(permission) {
-    return Object.keys(FleetCart.permissions).includes(permission);
+    const perms = (FleetCart && FleetCart.permissions) || [];
+    return perms.includes(permission);
 }
+
+/* export function hasAccess(permission) {
+    return Object.keys(FleetCart.permissions).includes(permission);
+} */
 
 export function generateUid() {
     const timestamp = Math.floor(Math.random() * Date.now()).toString(36);

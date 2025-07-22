@@ -11,6 +11,7 @@ use Modules\Blog\Entities\BlogPost;
 use Modules\Slider\Entities\Slider;
 use Illuminate\Support\Facades\Cache;
 use Modules\Category\Entities\Category;
+use Modules\Testimonial\Entities\Testimonial;
 
 class HomePageComposer
 {
@@ -38,6 +39,9 @@ class HomePageComposer
             'productTabsTwo' => $this->productTabsTwo(),
             'oneColumnBanner' => $this->oneColumnBanner(),
             'blog' => $this->blog(),
+            'categories' => $this->getCategories(),
+            'subCategories' => $this->getSubCategories(),
+            'testimonials' => $this->getTestimonial(),
         ]);
     }
 
@@ -209,5 +213,27 @@ class HomePageComposer
                 'blogPosts' => $blogPosts,
             ];
         }
+    }
+
+    private function getCategories()
+    {
+        return Category::with('files')
+            ->where('is_active', 1)
+            ->take(6)
+            ->get();
+    }
+
+    private function getSubCategories() 
+    {
+        return Category::with('files')
+            ->whereNotNull('parent_id')
+            ->where('is_active', 1)
+            ->take(6)
+            ->get();
+    }
+
+    private function getTestimonial()
+    {
+         return Testimonial::where('is_active',1)->get();
     }
 }
