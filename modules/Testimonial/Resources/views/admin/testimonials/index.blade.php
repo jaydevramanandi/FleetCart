@@ -17,8 +17,8 @@
                 @include('admin::partials.table.select_all')
 
                 <th>{{ trans('admin::admin.table.id') }}</th>
-                <th>{{ trans('brand::brands.table.logo') }}</th>
-                <th>{{ trans('brand::brands.table.name') }}</th>
+                <th>{{ trans('testimonial::testimonials.table.image') }}</th>
+                <th>{{ trans('testimonial::testimonials.table.name') }}</th>
                 <th>{{ trans('admin::admin.table.status') }}</th>
                 <th data-sort>{{ trans('admin::admin.table.created') }}</th>
             </tr>

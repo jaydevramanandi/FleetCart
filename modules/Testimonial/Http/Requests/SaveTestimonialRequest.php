@@ -24,22 +24,10 @@ class SaveTestimonialRequest extends Request
     public function rules()
     {
         return [
-            'name' => ['required'],
-            'slug' => $this->getSlugRules(),
+            'name'          => 'required|string|max:255',
+            'designation'   => 'nullable|string|max:255',
+            'message'       => 'required|string',
+            'is_active'     => 'sometimes|boolean',            
         ];
-    }
-
-
-    private function getSlugRules()
-    {
-        $rules = $this->route()->getName() === 'admin.testimonials.update'
-            ? ['required']
-            : ['sometimes'];
-
-        $slug = Testimonial::withoutGlobalScope('active')->where('id', $this->id)->value('slug');
-
-        $rules[] = Rule::unique('testimonials', 'slug')->ignore($slug, 'slug');
-
-        return $rules;
     }
 }

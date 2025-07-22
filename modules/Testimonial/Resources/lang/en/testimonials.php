@@ -4,8 +4,8 @@ return [
     'testimonial' => 'Testimonial',
     'testimonials' => 'Testimonials',
     'table' => [
-        'logo' => 'Logo',
-        'name' => 'Name',
+        'image' => 'Image',
+        'name'  => 'Name',
     ],
     'tabs' => [
         'group' => [
@@ -13,7 +13,7 @@ return [
         ],
         'general' => 'General',
         'seo' => 'SEO',
-        'images' => 'Images',
+        'images' => 'Image',
     ],
     'form' => [
         'enable_the_testimonial' => 'Enable the testimonial',

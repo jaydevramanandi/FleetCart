@@ -13,7 +13,7 @@ class SidebarExtender extends BaseSidebarExtender
     {        
         $menu->group(trans('admin::sidebar.content'), function (Group $group) {
             $group->item(trans('testimonial::testimonials.testimonials'), function (Item $item) {
-                $item->weight(12);
+                $item->weight(41);
                 $item->icon('fa fa-quote-left');
                 $item->route('admin.testimonials.index');
                 $item->authorize(

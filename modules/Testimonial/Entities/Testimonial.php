@@ -12,7 +12,6 @@ use Modules\Media\Eloquent\HasMedia;
 use Illuminate\Support\Facades\Cache;
 use Modules\Product\Entities\Product;
 use Modules\Meta\Eloquent\HasMetaData;
-use Modules\Support\Eloquent\Sluggable;
 use Spatie\Sitemap\Contracts\Sitemapable;
 use Modules\Support\Eloquent\Translatable;
 use Illuminate\Database\Eloquent\Collection;
@@ -20,26 +19,26 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Testimonial extends Model implements Sitemapable
 {
-    use Translatable, Sluggable, HasMedia, HasMetaData;
+    use Translatable, HasMedia, HasMetaData;
 
     /**
      * The attributes that are translatable.
      *
      * @var array
      */
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = [];
     /**
      * The relations to eager load on every query.
      *
      * @var array
      */
-    protected $with = ['translations'];
+    protected $with = [];
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['slug', 'is_active'];
+    protected $fillable = ['name', 'designation', 'message', 'is_active'];
 
     /**
      * The attributes that should be cast to native types.
@@ -49,26 +48,6 @@ class Testimonial extends Model implements Sitemapable
     protected $casts = [
         'is_active' => 'boolean',
     ];
-    /**
-     * The attribute that will be slugged.
-     *
-     * @var string
-     */
-    protected $slugAttribute = 'name';
-
-
-    /**
-     * Find a specific Testimonial by the given slug.
-     *
-     * @param string $slug
-     *
-     * @return self
-     */
-    public static function findBySlug($slug)
-    {
-        return self::where('slug', $slug)->firstOrNew([]);
-    }
-
 
     /**
      * Get Testimonial list.
@@ -101,7 +80,7 @@ class Testimonial extends Model implements Sitemapable
      */
     public function url()
     {
-        return route('testimonials.products.index', $this->slug);
+        return route('testimonials.products.index', ['id' => $this->id]);
     }
 
 
