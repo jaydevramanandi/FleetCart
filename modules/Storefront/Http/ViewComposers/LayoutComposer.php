@@ -12,6 +12,7 @@ use Modules\Menu\Entities\Menu;
 use Modules\Page\Entities\Page;
 use Modules\Media\Entities\File;
 use Modules\Menu\MegaMenu\MegaMenu;
+use Modules\Testimonial\Entities\Testimonial;
 use Illuminate\Support\Facades\Cache;
 use Modules\Category\Entities\Category;
 use Modules\Product\Entities\SearchTerm;
@@ -63,6 +64,7 @@ class LayoutComposer
             'copyrightText' => $this->getCopyrightText(),
             'acceptedPaymentMethodsImage' => $this->getAcceptedPaymentMethodsImage(),
             'schemaMarkup' => $this->getSchemaMarkup(),
+            'testimonials' => $this->getTestimonial(),
         ]);
     }
 
@@ -139,7 +141,7 @@ class LayoutComposer
 
     private function getCategories()
     {
-         return Category::take(5)->get();
+         return Category::take(6)->get();
     }
 
 
@@ -225,5 +227,10 @@ class LayoutComposer
         return Schema::searchAction()
             ->target(route('products.index') . '?query={search_term_string}')
             ->setProperty('query-input', 'required name=search_term_string');
+    }
+
+    private function getTestimonial()
+    {
+         return Testimonial::where('is_active',1)->get();
     }
 }
