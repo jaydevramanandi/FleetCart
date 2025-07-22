@@ -55,6 +55,7 @@ class LayoutComposer
             'newsletterBgImage' => $this->getNewsletterBgImage(),
             'privacyPageUrl' => $this->getPrivacyPageUrl(),
             'categories' => $this->getCategories(),
+            'subCategories' => $this->getSubCategories(),
             'mostSearchedKeywords' => $this->getMostSearchedKeywords(),
             'primaryMenu' => $this->getPrimaryMenu(),
             'categoryMenu' => $this->getCategoryMenu(),
@@ -141,9 +142,20 @@ class LayoutComposer
 
     private function getCategories()
     {
-         return Category::take(6)->get();
+        return Category::with('files')
+            ->where('is_active', 1)
+            ->take(6)
+            ->get();
     }
 
+    private function getSubCategories() 
+    {
+        return Category::with('files')
+            ->whereNotNull('parent_id')
+            ->where('is_active', 1)
+            ->take(6)
+            ->get();
+    }
 
     private function getMostSearchedKeywords()
     {

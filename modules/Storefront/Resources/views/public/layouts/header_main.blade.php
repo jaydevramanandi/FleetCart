@@ -1,17 +1,27 @@
 <div class="main-header">
     <div class="container">
         <div class="logo">
-            <div class="logo-icon"><img src='{{ asset('build/assets/images/logo.svg') }}' width='100%'></div>
+            <div class="logo-icon">
+                @if (is_null($logo))
+                    <h3>{{ setting('store_name') }}</h3>
+                @else
+                    <img src="{{ $logo }}" alt="{{ setting('store_name') ?? 'Logo' }}" width='100%'>
+                @endif
+                <!-- <img src='{{ asset('build/assets/images/logo.svg') }}' width='100%'> -->
+            </div>
             
         </div>
-
+        
+        @include('storefront::public.layouts.header.header_search')
+        {{--
         <div class="search-container">
             <input type="text" placeholder="Search for products or categories..." class="search-input">
             <button class="search-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.0051 12.9782L16.7143 16.7143M15.0001 8.14286C15.0001 11.93 11.93 15 8.14291 15C4.35581 15 1.28577 11.93 1.28577 8.14286C1.28577 4.35576 4.35581 1.28571 8.14291 1.28571C11.93 1.28571 15.0001 4.35576 15.0001 8.14286Z" stroke="#333333" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                </button>
+            </button>
         </div>
+        --}}        
 
         <div class="cart-container">
             <div class="cart-icon"><svg width="38" height="43" viewBox="0 0 38 43" fill="none" xmlns="http://www.w3.org/2000/svg">
