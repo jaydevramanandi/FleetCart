@@ -102,8 +102,25 @@
 
     @yield('content')
 
+    <!-- Newsletter Section -->
+    @include('storefront::public.layouts.newsletter')
+
     <!-- Footer -->
     @include('storefront::public.layouts.footer_main')
+
+    <div
+        class="overlay"
+        :class="{ active: $store.layout.overlay }"
+        @click="hideOverlay"
+    >
+    </div>
+
+    @include('storefront::public.layouts.sidebar_menu')
+    @include('storefront::public.layouts.localization')
+
+    @if (!request()->routeIs('checkout.create'))
+        @include('storefront::public.layouts.sidebar_cart')
+    @endif
     
     @include('storefront::public.layouts.scroll_to_top')
 </div>

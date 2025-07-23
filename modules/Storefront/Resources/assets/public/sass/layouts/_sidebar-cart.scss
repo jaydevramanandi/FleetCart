@@ -64,3 +64,7 @@
         width: 300px;
     }
 }
+
+.sidebar-cart-wrap.active {
+    z-index: 9999;
+}

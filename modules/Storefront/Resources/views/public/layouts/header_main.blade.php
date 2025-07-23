@@ -13,16 +13,8 @@
         </div>
         
         @include('storefront::public.layouts.header.header_search')
-        {{--
-        <div class="search-container">
-            <input type="text" placeholder="Search for products or categories..." class="search-input">
-            <button class="search-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.0051 12.9782L16.7143 16.7143M15.0001 8.14286C15.0001 11.93 11.93 15 8.14291 15C4.35581 15 1.28577 11.93 1.28577 8.14286C1.28577 4.35576 4.35581 1.28571 8.14291 1.28571C11.93 1.28571 15.0001 4.35576 15.0001 8.14286Z" stroke="#333333" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-        --}}        
 
+        {{--
         <div class="cart-container">
             <div class="cart-icon"><svg width="38" height="43" viewBox="0 0 38 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7042 35.8778C15.873 35.8778 16.8216 36.8264 16.8216 37.9952C16.8216 39.164 15.873 40.1126 14.7042 40.1126C13.5354 40.1126 12.5868 39.164 12.5868 37.9952C12.5868 36.8264 13.5354 35.8778 14.7042 35.8778ZM10.4694 37.9952C10.4694 40.3338 12.3655 42.23 14.7042 42.23C17.0429 42.23 18.939 40.3338 18.939 37.9952C18.939 35.6565 17.0429 33.7604 14.7042 33.7604C12.3655 33.7604 10.4694 35.6565 10.4694 37.9952ZM12.5868 31.643C11.418 31.643 10.4694 30.6944 10.4694 29.5256C10.4694 29.5256 34.8195 27.4081 34.7898 27.5108C35.3298 25.5025 37.9734 13.8812 37.9956 13.6451C38.0528 13.0628 37.5223 12.5864 36.9369 12.5864H10.4694V10.469H11.5281C12.1135 10.469 12.5868 9.99572 12.5868 9.41026C12.5868 8.82586 12.1135 8.35156 11.5281 8.35156H5.17589C4.59043 8.35156 4.11719 8.82586 4.11719 9.41026C4.11719 9.99572 4.59043 10.469 5.17589 10.469H8.35199V29.5256C8.35199 31.8642 10.2481 33.7604 12.5868 33.7604H36.9369C36.9697 33.7604 36.9369 32.7112 36.9369 31.643H12.5868ZM27.4086 35.8778C28.5774 35.8778 29.526 36.8264 29.526 37.9952C29.526 39.164 28.5774 40.1126 27.4086 40.1126C26.2398 40.1126 25.2912 39.164 25.2912 37.9952C25.2912 36.8264 26.2398 35.8778 27.4086 35.8778ZM23.1738 37.9952C23.1738 40.3338 25.0699 42.23 27.4086 42.23C29.7473 42.23 31.6434 40.3338 31.6434 37.9952C31.6434 35.6565 29.7473 33.7604 27.4086 33.7604C25.0699 33.7604 23.1738 35.6565 23.1738 37.9952Z" fill="black"/>
@@ -32,5 +24,59 @@
                 </div>
             <!-- <span class="cart-count">0</span> -->
         </div>
+        --}}
+
+        <div class="header-column-right d-flex">
+            <div class="header-column-right-item header-localization">
+                <div class="icon-wrap" @click="$store.layout.openLocalizationMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#292D32" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M7.99998 3H8.99998C7.04998 8.84 7.04998 15.16 8.99998 21H7.99998" stroke="#292D32" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15 3C16.95 8.84 16.95 15.16 15 21" stroke="#292D32" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M3 16V15C8.84 16.95 15.16 16.95 21 15V16" stroke="#292D32" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M3 8.99998C8.84 7.04998 15.16 7.04998 21 8.99998" stroke="#292D32" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <a href="{{ route('compare.index') }}" class="header-column-right-item header-compare">
+                <div class="icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3.58008 5.15991H17.4201C19.0801 5.15991 20.4201 6.49991 20.4201 8.15991V11.4799" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.74008 2L3.58008 5.15997L6.74008 8.32001" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20.4201 18.84H6.58008C4.92008 18.84 3.58008 17.5 3.58008 15.84V12.52" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17.26 21.9999L20.42 18.84L17.26 15.6799" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                      
+                    
+                    <div class="count" x-text="$store.compare.count">{{ $compareCount }}</div>
+                </div>
+            </a>
+
+            <a href="{{ route('account.wishlist.index') }}" class="header-column-right-item header-wishlist">
+                <div class="icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                      
+                    
+                    <div class="count" x-text="$store.wishlist.count">{{ $wishlistCount }}</div>
+                </div>
+            </a>
+            
+            <a
+                href="{{ route('cart.index') }}"
+                class="header-column-right-item header-cart"
+                @click="$store.layout.openSidebarCart($event)"
+            >  
+                <div class="icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.5 7.67001V6.70001C7.5 4.45001 9.31 2.24001 11.56 2.03001C14.24 1.77001 16.5 3.88001 16.5 6.51001V7.89001" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9.00001 22H15C19.02 22 19.74 20.39 19.95 18.43L20.7 12.43C20.97 9.99 20.27 8 16 8H8.00001C3.73001 8 3.03001 9.99 3.30001 12.43L4.05001 18.43C4.26001 20.39 4.98001 22 9.00001 22Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                    <div class="count" x-text="$store.cart.quantity">{{ $cartQuantity }}</div>
+                </div>
+            </a>
+        </div>
+        
     </div>
 </div>

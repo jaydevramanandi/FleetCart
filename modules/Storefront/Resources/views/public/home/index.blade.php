@@ -16,9 +16,6 @@
 <!-- Testimonials Section -->
 @include('storefront::public.layouts.testimonials')
 
-<!-- Newsletter Section -->
-@include('storefront::public.layouts.newsletter')
-
 @endsection
 
 @push('meta')
