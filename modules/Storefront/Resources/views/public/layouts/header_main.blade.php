@@ -1,16 +1,37 @@
 <div class="main-header">
     <div class="container">
+
+        {{--
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <div class="logo-icon">
+                    @if (is_null($logo))
+                        <h3>{{ setting('store_name') }}</h3>
+                    @else
+                        <img src="{{ $logo }}" alt="{{ setting('store_name') ?? 'Logo' }}" width='100%'>
+                    @endif
+                </div>
+                <div class="logo-text">
+                    <span class="logo-wholesale">Wholesale</span>
+                    <span class="logo-connect">Connect</span>
+                </div>
+            </div>
+        </a>
+        --}}
+         
         <div class="logo">
             <div class="logo-icon">
-                @if (is_null($logo))
-                    <h3>{{ setting('store_name') }}</h3>
-                @else
-                    <img src="{{ $logo }}" alt="{{ setting('store_name') ?? 'Logo' }}" width='100%'>
-                @endif
-                <!-- <img src='{{ asset('build/assets/images/logo.svg') }}' width='100%'> -->
-            </div>
-            
+                <a href="{{ url('/') }}">
+                    @if (is_null($logo))
+                        <h3>{{ setting('store_name') }}</h3>
+                    @else
+                        <img src="{{ $logo }}" alt="{{ setting('store_name') ?? 'Logo' }}" width='100%'>
+                    @endif
+                    <!-- <img src='{{ asset('build/assets/images/logo.svg') }}' width='100%'> -->
+                </a>
+            </div>            
         </div>
+        
         
         @include('storefront::public.layouts.header.header_search')
 
@@ -39,6 +60,7 @@
                 </div>
             </div>
 
+            {{--
             <a href="{{ route('compare.index') }}" class="header-column-right-item header-compare">
                 <div class="icon-wrap">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -61,6 +83,7 @@
                     <div class="count" x-text="$store.wishlist.count">{{ $wishlistCount }}</div>
                 </div>
             </a>
+            --}}
             
             <a
                 href="{{ route('cart.index') }}"

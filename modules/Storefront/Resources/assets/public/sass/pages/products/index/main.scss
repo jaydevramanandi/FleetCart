@@ -8,9 +8,10 @@
 @import "sections/_search-result";
 @import "sections/_grid-view-product"; 
 @import "sections/_list-view-product";
+@import "sections/_product-page-custom";
 
 .product-search-wrap {
-    margin-top: 50px;
+    /* margin-top: 50px; */
 
     .product-search {
         display: flex; 
@@ -19,7 +20,7 @@
 
 @media screen and (max-width: 991px) {
     .product-search-wrap {
-        margin-top: 24px;
+        /* margin-top: 24px; */
     }
 
     .product-search {

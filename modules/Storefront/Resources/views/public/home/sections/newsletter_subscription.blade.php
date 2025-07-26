@@ -21,15 +21,17 @@
                                 <div class="subscribe-field">
                                     <form x-ref="form" @submit.prevent="subscribe">
                                         <div class="form-group">
-                                            <input
-                                                type="email"
-                                                autocomplete="on"
-                                                class="form-control"
-                                                id="email"
-                                                placeholder="{{ trans('storefront::layouts.email_address') }}"
-                                                @input="subscribed = false"
-                                                x-model="email"
-                                            />
+                                            <div x-data="{ email: '', subscribed: false }">
+                                                <input
+                                                    type="email"
+                                                    autocomplete="on"
+                                                    class="form-control"
+                                                    id="email"
+                                                    placeholder="{{ trans('storefront::layouts.email_address') }}"
+                                                    @input="subscribed = false"
+                                                    x-model="email"
+                                                />
+                                            </div>
 
                                             <button
                                                 type="submit"

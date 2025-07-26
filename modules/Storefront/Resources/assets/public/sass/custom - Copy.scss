@@ -106,12 +106,20 @@ body {
 }
 
 .logo-icon {
-    width: 150px;
-    height: auto;
+
+    width: 44px;
+    height: 57px;    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 8px;
+
+    /* width: 150px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px; */
 }
 
 .logo-text {
@@ -593,7 +601,7 @@ body {
     background-color: #ffcf5e;
     padding: 43px 0;
     border: 0.5px solid #9c9c9c;
-    /* margin-top: 30px; */
+    margin-top: 30px;
 }
 
 .newsletter-content {
@@ -1136,6 +1144,3 @@ a:focus {
     border-bottom: none !important;
 }
 
-.logo-link, .categories-card {
-    text-decoration: none;
-}
