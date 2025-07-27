@@ -1,9 +1,12 @@
 .product-search-right {
     width: calc(100% - 293px);
+    margin-right: 30px;
+    margin-top: 10px;
 
     .categories-banner {
         display: block;
         margin-bottom: 40px;
+        margin-top: 40px;
 
         &:before,
         &:after {
