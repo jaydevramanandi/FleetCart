@@ -71,7 +71,7 @@ Alpine.data("ProductIndex", () => ({
     },
 
     init() {
-        this.initPriceFilter();
+        // this.initPriceFilter();
         this.fetchProducts();
         this.initLatestProductsSlider();
     },

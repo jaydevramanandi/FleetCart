@@ -11,7 +11,7 @@ body {
 }
 
 .main-container {
-  display: flex;
+  display: flow;
   min-height: 100vh;
 }
 
@@ -21,6 +21,7 @@ body {
   background-color: #f9f9f9;
   padding: 1.5rem;
   border-right: 1px solid #ddd;
+  min-height: 1024px;
 }
 
 .sidebar h3 {
@@ -228,4 +229,13 @@ body {
   margin-left: 30px;
   margin-top: 10px;
   margin-bottom: 20px !important;
+}
+
+.chevron {
+    transform: rotate(0deg); /* Default: ▶ */
+    transition: transform 0.3s ease;
+}
+
+.chevron.rotate {
+    transform: rotate(225deg); /* Rotated: ⧩ */
 }

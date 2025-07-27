@@ -13,6 +13,89 @@
         x-data="ProductIndex"
         class="product-search-wrap"
     >
+
+    <div class="main-container">
+            <div class="product-search">
+                <div class="product-search-left">
+                    @if ($categories->isNotEmpty())
+                        <nav class="sidebar" id="sidebar">
+                            <h2>Categories</h2>
+                            @include('storefront::public.products.index.browse_categories')                
+                        </nav>
+                    @endif
+                    
+                    {{--
+                    @include('storefront::public.products.index.filter')
+                    @include('storefront::public.products.index.latest_products')
+                    --}}
+                </div>
+                
+
+                <div class="product-search-right">
+                    <template x-if="brandBanner">
+                        <div class="d-none d-lg-block categories-banner">
+                            <img :src="brandBanner" alt="Brand banner">
+                        </div>
+                    </template>
+                    
+                    <template x-if="!brandBanner && categoryBanner">
+                        <div class="d-none d-lg-block categories-banner">
+                            <img :src="categoryBanner" alt="Category banner">
+                        </div>
+                    </template>
+
+                    @include('storefront::public.products.index.search_result')
+                </div>
+            </div>
+        </div>
+
+    {{--
+        <div class="main-container">
+
+            <div class="product-search">
+            
+            <nav class="sidebar" id="sidebar">
+                <h2>Categories</h2>
+                @include('storefront::public.products.index.browse_categories')                
+            </nav>
+
+            
+                <section class=" ">
+                    <nav class="breadcrumb container">
+                    <a href="index.html">Home</a>
+                    <span>›</span>
+                    <a href="homeOffice.html">Learning, Activity & Books</a>
+                    <span>›</span>
+                    <span>Educational Books</span>
+                    </nav>
+                </section>
+
+                <div class="product-search">
+            
+                <div class="product-search-right">
+                    <template x-if="brandBanner">
+                        <div class="d-none d-lg-block categories-banner">
+                            <img :src="brandBanner" alt="Brand banner">
+                        </div>
+                    </template>
+                    
+                    <template x-if="!brandBanner && categoryBanner">
+                        <div class="d-none d-lg-block categories-banner">
+                            <img :src="categoryBanner" alt="Category banner">
+                        </div>
+                    </template>
+
+                    @include('storefront::public.products.index.search_result')
+                </div>
+
+            </div>
+
+            </div>
+            
+        </div>
+        --}}
+
+        {{--
         <div class="container">
             <div class="product-search">
                 <div class="product-search-left">
@@ -48,6 +131,7 @@
                 </div>
             </div>
         </div>
+        --}}
     </section>
 @endsection
 
@@ -57,7 +141,7 @@
         FleetCart.data['initialBrandName'] = '{{ addslashes($brandName ?? '') }}';
         FleetCart.data['initialBrandBanner'] = '{{ addslashes($brandBanner ?? '') }}';
         FleetCart.data['initialBrandSlug'] = '{{ addslashes(request('brand')) }}';
-        FleetCart.data['initialCategoryName'] = '{{ addslashes($categoryName ?? '') }}';
+        FleetCart.data['initialCategoryName'] = '{!! addslashes($categoryName ?? '') !!}';
         FleetCart.data['initialCategoryBanner'] = '{{ addslashes($categoryBanner ?? '') }}';
         FleetCart.data['initialCategorySlug'] = '{{ addslashes(request('category')) }}';
         FleetCart.data['initialTagName'] = '{{ addslashes($tagName ?? '') }}';

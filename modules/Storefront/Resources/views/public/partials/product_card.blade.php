@@ -11,6 +11,7 @@
             <div class="product-image-layer"></div>
         </a>
 
+        {{--
         <div class="product-card-actions">
             <button
                 class="btn btn-wishlist"
@@ -57,7 +58,8 @@
                 </svg>
             </button>
         </div>
-
+        --}}
+        
         <ul class="list-inline product-badge">
             <template x-if="isOutOfStock">
                 <li class="badge badge-danger">
