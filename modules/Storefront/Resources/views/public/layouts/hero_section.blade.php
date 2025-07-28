@@ -1,5 +1,5 @@
-<section x-data="Hero" class="home-section-wrap hero">
-    <div class="container" style="max-width: 100%;">
+<section x-data="Hero" class="">
+    <div class="" style="max-width: 100%;">
         <div class="row">
             <div class="home-section-inner">
                 <div class="home-slider-wrap">

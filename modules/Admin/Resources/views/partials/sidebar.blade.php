@@ -1,6 +1,6 @@
 <aside class="main-sidebar">
     <header class="main-header clearfix">
-        <h1><a class="logo" href="{{ route('admin.dashboard.index') }}">
+        <h1 style="font-size: 22px;"><a class="logo" href="{{ route('admin.dashboard.index') }}" style="color: #FFFFFF; text-decoration: none;">
             {{--
             @if (is_null($logo))
                 <img src="{{ asset('build/assets/sidebar-logo-ltr.svg') }}" alt="sidebar logo">
@@ -8,11 +8,11 @@
                 <img src="{{ $logo }}" alt="sidebar logo">
             @endif
             --}}
-            DemoCart
+            Wrapping & Packing
         </a></h1>
 
-        <h1>
-        <a class="sidebar-logo-mini" href="{{ route('admin.dashboard.index') }}">
+        <h1 style="font-size: 22px;">
+        <a class="sidebar-logo-mini" href="{{ route('admin.dashboard.index') }}" style="color: #FFFFFF; text-decoration: none;">
             {{--
             @if (is_null($smallLogo))
                 <img src="{{ asset('build/assets/sidebar-logo-mini.svg') }}" alt="sidebar logo mini">
@@ -20,7 +20,7 @@
                 <img src="{{ $smallLogo }}" alt="sidebar logo mini">
             @endif
             --}}
-            DemoCart
+            Wrapping & Packing
         </a></h1>
 
         <a href="javascript:void(0);" class="sidebar-toggle" data-toggle="offcanvas" role="button">

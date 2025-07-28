@@ -4,10 +4,8 @@
         <div class="categories-grid">
             
             @if (!empty($categories))
-
                 @foreach ($categories as $category)
-
-                    <div class="category-item">
+                    <a href="{{ route('categories.products.index', ['category' => $category->slug]) }}" class="category-item">
                         <div class="category-card">
                             <div class="category-image">
                                 @php
@@ -23,10 +21,8 @@
                             </div>
                         </div>
                         <h3 class="category-title">{{ $category->name }}</h3>
-                    </div>
-
+                    </a>
                 @endforeach
-
             @endif
             
         </div>
@@ -39,10 +35,8 @@
         <div class="categories-grid">
         
         @if (!empty($subCategories))
-
             @foreach ($subCategories as $subCategory)
-
-                <div class="category-item">
+                <a href="{{ route('categories.products.index', ['category' => $subCategory->slug]) }}" class="category-item">
                     <div class="category-card">
                         <div class="category-image">
                             @php
@@ -58,10 +52,8 @@
                         </div>
                     </div>
                     <h3 class="category-title">{{ $subCategory->name }}</h3>
-                </div>
-
+                </a>
             @endforeach
-
         @endif
         
         </div>
